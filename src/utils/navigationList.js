@@ -2,7 +2,8 @@ const navigationList = {
   "cities": [
     {
       "section": "cupertino",
-      "label": "Cupertino"
+      "label": "Cupertino",
+      "current": true
     },
     {
       "section": "new-york-city",

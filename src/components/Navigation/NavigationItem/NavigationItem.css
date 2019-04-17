@@ -13,7 +13,11 @@
   color: #0070c9;
 }
 
-.navigationItem--current a
+.navigationItem a:active {
+  color: #000;
+}
+
+.navigationItem--current a,
 .navigationItem--current a:active {
   color: #000
 }

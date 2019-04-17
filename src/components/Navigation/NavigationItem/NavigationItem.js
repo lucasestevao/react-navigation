@@ -5,11 +5,6 @@ import classNames from 'classnames'
 import './NavigationItem.css'
 
 class NavigationItem extends Component {
-  constructor(props) {
-    super(props)
-    this.itemRef = React.createRef()
-  }
-
   static propTypes = {
     item: PropTypes.shape().isRequired,
     onClick: PropTypes.func
@@ -17,6 +12,19 @@ class NavigationItem extends Component {
 
   static defaultProps = {
     onClick: () => {}
+  }
+
+  constructor(props) {
+    super(props)
+    this.itemRef = React.createRef()
+  }
+
+  componentDidMount() {
+    const { onClick, item } = this.props
+
+    if (item.current) {
+      onClick(item, this.itemRef.current)
+    }
   }
 
   handleClick = item => event => {
