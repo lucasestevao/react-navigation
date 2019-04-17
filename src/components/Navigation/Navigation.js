@@ -50,7 +50,7 @@ class Navigation extends Component {
     this.setState({
       slidelineStyle: this.getSlidelineStyle(this.state.currentElement)
     })
-  }, 500)
+  }, 100)
 
   handleClick = (currentItem, element) => {
     const { onClick } = this.props
