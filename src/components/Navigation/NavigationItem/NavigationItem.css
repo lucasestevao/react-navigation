@@ -12,7 +12,3 @@
 .navigationItem a:hover {
   color: #0070c9;
 }
-
-.navigationItem--current {
-  border-bottom: 1px solid #000;
-}

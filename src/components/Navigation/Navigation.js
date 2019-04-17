@@ -12,7 +12,8 @@ class Navigation extends Component {
     const { navigationList } = props
 
     this.state = {
-      navigationList
+      navigationList,
+      slidelineStyle: {}
     }
   }
 
@@ -27,7 +28,7 @@ class Navigation extends Component {
     onClick: () => {}
   }
 
-  handleClick = currentItem => {
+  handleClick = (currentItem, element) => {
     const { onClick } = this.props
     const { navigationList } = this.state
 
@@ -36,23 +37,30 @@ class Navigation extends Component {
       current: item.section === currentItem.section
     }))
 
-    this.setState(
-      {
-        navigationList: newList
-      },
-      onClick()
-    )
+    const DOMRect =  element.getBoundingClientRect()
+
+    const style = {
+      width: DOMRect.width,
+      marginLeft: DOMRect.x
+    }
+
+    this.setState({
+      navigationList: newList,
+      slidelineStyle: style
+    })
+
+    onClick()
   }
 
   render() {
     const { customClass } = this.props
-    const { navigationList } = this.state
+    const { navigationList, slidelineStyle } = this.state
 
     const classes = classNames('navigation', customClass)
 
     return navigationList ? (
       <nav className={classes}>
-        <ul>
+        <ul className="navigation__container">
           {navigationList.map(item => (
             <NavigationItem
               item={item}
@@ -62,7 +70,7 @@ class Navigation extends Component {
             />
           ))}
         </ul>
-        <span className="navigation__slideline" />
+        <span className="navigation__slideline" style={slidelineStyle} />
       </nav>
     ) : (
       ''

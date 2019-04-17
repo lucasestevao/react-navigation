@@ -5,6 +5,11 @@ import classNames from 'classnames'
 import './NavigationItem.css'
 
 class NavigationItem extends Component {
+  constructor(props) {
+    super(props)
+    this.itemRef = React.createRef()
+  }
+
   static propTypes = {
     item: PropTypes.shape().isRequired,
     onClick: PropTypes.func
@@ -14,13 +19,13 @@ class NavigationItem extends Component {
     onClick: () => {}
   }
 
-  handleClick = (item) => (event) => {
+  handleClick = item => event => {
     event.preventDefault()
     event.stopPropagation()
 
     const { onClick } = this.props
 
-    onClick(item)
+    onClick(item, this.itemRef.current)
   }
 
   render() {
@@ -32,7 +37,11 @@ class NavigationItem extends Component {
     )
 
     return (
-      <li className={classes} onClick={this.handleClick(item)}>
+      <li
+        className={classes}
+        onClick={this.handleClick(item)}
+        ref={this.itemRef}
+      >
         <a href={`#${item.section}`}>{item.label}</a>
       </li>
     )

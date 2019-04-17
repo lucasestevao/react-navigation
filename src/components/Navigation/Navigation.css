@@ -1,15 +1,28 @@
-.navigation {
-  width: 80%;
+.navigation,
+.navigation__container,
+.navigation__slideline {
+  display: flex;
 }
 
-.navigation ul {
-  display: flex;
+.navigation {
+  width: 100%;
+  flex-direction: column;
+}
+
+.navigation__container {
   flex-direction: row;
   justify-content: center;
+  align-self: center;
+  border-bottom: 1px solid #adadad;
 }
 
 .navigation__slideline {
-  display: flex;
-  width: 100%;
-  border-bottom: 1px solid #adadad;
+  position: relative;
+  top: -1px;
+  height: 1px;
+  background: #000;
+  transition: 0.3s ease-in-out;
+
+  width: 0px;
+  margin-left: 0px;
 }
