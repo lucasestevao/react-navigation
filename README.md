@@ -24,6 +24,6 @@ Launches the test runner in the interactive watch mode.
 - jest
 - node
 
-## To Do:
+## To Do
 
 - Display custom content according with the selected item
