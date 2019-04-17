@@ -1,6 +1,6 @@
 
 # React Navigation
-A Navigation menu made with React.
+A Navigation menu made with React. [Check it out](https://lucasestevao.github.io/react-navigation/)
 
 ## Launching:
 
@@ -23,3 +23,7 @@ Launches the test runner in the interactive watch mode.
 - react
 - jest
 - node
+
+## To Do:
+
+- Display custom content according with the selected item

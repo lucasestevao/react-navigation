@@ -38,10 +38,12 @@ class Navigation extends Component {
   }
 
   getSlidelineStyle = element => {
-    return element ? {
-      width: element.clientWidth,
-      marginLeft: element.offsetLeft
-    } : {}
+    return element
+      ? {
+          width: element.clientWidth,
+          marginLeft: element.offsetLeft
+        }
+      : {}
   }
 
   handleResize = throttle(() => {
