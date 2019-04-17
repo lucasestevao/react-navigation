@@ -6,8 +6,7 @@
 
 .navigation {
   width: 100%;
-  flex-direction: column;
-  overflow: scroll;
+  overflow-x: auto;
 }
 
 .navigation__container {
@@ -15,18 +14,22 @@
   justify-content: center;
   align-self: center;
   border-bottom: 1px solid #adadad;
+  position: relative;
+  margin: 0 auto;
 }
 
-.navigation__slideline {
-  position: relative;
-  top: -1px;
+.navigation__container::after {
+  content: '';
+  position: absolute;
+  display: block;
+  background-color: #000;
   height: 1px;
-  background: #000;
+  bottom: 0;
 
-  transition-property: width, margin-left;
-  transition-duration: 0s, 0.4s, 0s;
+  left: 0;
+  width: 0;
+
+  transition-property: left, width;
+  transition-duration: 0.4s;
   transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94), ease-in-out;
-
-  width: 0px;
-  margin-left: 0px;
 }

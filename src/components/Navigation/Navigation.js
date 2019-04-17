@@ -40,8 +40,8 @@ class Navigation extends Component {
   getSlidelineStyle = element => {
     return element
       ? {
-          width: element.clientWidth,
-          marginLeft: element.offsetLeft
+          width: `${element.clientWidth}px`,
+          left: `${element.offsetLeft}px`
         }
       : {}
   }
@@ -78,6 +78,7 @@ class Navigation extends Component {
 
     return navigationList ? (
       <nav className={classes}>
+        <style>{`.navigation__container::after { width: ${slidelineStyle.width}; left: ${slidelineStyle.left}; }`}</style>
         <ul className="navigation__container">
           {navigationList.map(item => (
             <NavigationItem
@@ -88,7 +89,6 @@ class Navigation extends Component {
             />
           ))}
         </ul>
-        <span className="navigation__slideline" style={slidelineStyle} />
       </nav>
     ) : (
       ''
