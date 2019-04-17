@@ -1,13 +1,13 @@
 {
-  "main.css": "/react-navigation/public/static/css/main.8ac5278d.chunk.css",
-  "main.js": "/react-navigation/public/static/js/main.29c0e3f9.chunk.js",
-  "main.js.map": "/react-navigation/public/static/js/main.29c0e3f9.chunk.js.map",
-  "runtime~main.js": "/react-navigation/public/static/js/runtime~main.d84215f0.js",
-  "runtime~main.js.map": "/react-navigation/public/static/js/runtime~main.d84215f0.js.map",
-  "static/js/2.c5f0f63f.chunk.js": "/react-navigation/public/static/js/2.c5f0f63f.chunk.js",
-  "static/js/2.c5f0f63f.chunk.js.map": "/react-navigation/public/static/js/2.c5f0f63f.chunk.js.map",
-  "index.html": "/react-navigation/public/index.html",
-  "precache-manifest.dae44a182ec4d5fb439fa0ee48bbe48a.js": "/react-navigation/public/precache-manifest.dae44a182ec4d5fb439fa0ee48bbe48a.js",
-  "service-worker.js": "/react-navigation/public/service-worker.js",
-  "static/css/main.8ac5278d.chunk.css.map": "/react-navigation/public/static/css/main.8ac5278d.chunk.css.map"
+  "main.css": "/react-navigation/build/static/css/main.8ac5278d.chunk.css",
+  "main.js": "/react-navigation/build/static/js/main.1ee91968.chunk.js",
+  "main.js.map": "/react-navigation/build/static/js/main.1ee91968.chunk.js.map",
+  "runtime~main.js": "/react-navigation/build/static/js/runtime~main.9dd46e20.js",
+  "runtime~main.js.map": "/react-navigation/build/static/js/runtime~main.9dd46e20.js.map",
+  "static/js/2.c5f0f63f.chunk.js": "/react-navigation/build/static/js/2.c5f0f63f.chunk.js",
+  "static/js/2.c5f0f63f.chunk.js.map": "/react-navigation/build/static/js/2.c5f0f63f.chunk.js.map",
+  "index.html": "/react-navigation/build/index.html",
+  "precache-manifest.7b8eb5bbecc9c6fafc23110a89102d87.js": "/react-navigation/build/precache-manifest.7b8eb5bbecc9c6fafc23110a89102d87.js",
+  "service-worker.js": "/react-navigation/build/service-worker.js",
+  "static/css/main.8ac5278d.chunk.css.map": "/react-navigation/build/static/css/main.8ac5278d.chunk.css.map"
 }
