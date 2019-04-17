@@ -7,6 +7,7 @@
 .navigation {
   width: 100%;
   flex-direction: column;
+  overflow: scroll;
 }
 
 .navigation__container {
@@ -21,7 +22,7 @@
   top: -1px;
   height: 1px;
   background: #000;
-  transition: 0.3s ease-in-out;
+  transition: width, margin-left 0.3s ease-in-out;
 
   width: 0px;
   margin-left: 0px;

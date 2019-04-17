@@ -1,22 +1,13 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
+import throttle from 'lodash/throttle'
 
 import NavigationItem from './NavigationItem/NavigationItem'
 
 import './Navigation.css'
 
 class Navigation extends Component {
-  constructor(props) {
-    super(props)
-    const { navigationList } = props
-
-    this.state = {
-      navigationList,
-      slidelineStyle: {}
-    }
-  }
-
   static propTypes = {
     customClass: PropTypes.string,
     navigationList: PropTypes.arrayOf(PropTypes.shape()).isRequired,
@@ -28,6 +19,37 @@ class Navigation extends Component {
     onClick: () => {}
   }
 
+  constructor(props) {
+    super(props)
+    const { navigationList } = props
+
+    this.state = {
+      navigationList,
+      slidelineStyle: {}
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.handleResize)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize)
+  }
+
+  getSlidelineStyle = element => {
+    return element ? {
+      width: element.clientWidth,
+      marginLeft: element.offsetLeft
+    } : {}
+  }
+
+  handleResize = throttle(() => {
+    this.setState({
+      slidelineStyle: this.getSlidelineStyle(this.state.currentElement)
+    })
+  }, 500)
+
   handleClick = (currentItem, element) => {
     const { onClick } = this.props
     const { navigationList } = this.state
@@ -37,16 +59,10 @@ class Navigation extends Component {
       current: item.section === currentItem.section
     }))
 
-    const DOMRect =  element.getBoundingClientRect()
-
-    const style = {
-      width: DOMRect.width,
-      marginLeft: DOMRect.x
-    }
-
     this.setState({
+      currentElement: element,
       navigationList: newList,
-      slidelineStyle: style
+      slidelineStyle: this.getSlidelineStyle(element)
     })
 
     onClick()
