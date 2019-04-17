@@ -88,7 +88,9 @@ class Navigation extends Component {
             />
           ))}
         </ul>
-        <span className="navigation__slideline" style={slidelineStyle} />
+        <div className="navigation__slideline-container">
+          <span className="navigation__slideline" style={slidelineStyle} />
+        </div>
       </nav>
     ) : (
       ''
