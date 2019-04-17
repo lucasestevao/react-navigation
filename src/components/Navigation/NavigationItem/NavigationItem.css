@@ -1,3 +1,18 @@
-.NavigationItem {
+.navigationItem {
   display: flex;
+  padding: 10px 20px;
+}
+
+.navigationItem a,
+.navigationItem a:visited {
+  text-decoration: none;
+  color: #adadad;
+}
+
+.navigationItem a:hover {
+  color: #0070c9;
+}
+
+.navigationItem--current {
+  border-bottom: 1px solid #000;
 }
